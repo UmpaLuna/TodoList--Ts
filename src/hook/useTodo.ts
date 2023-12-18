@@ -6,7 +6,7 @@ function useTodo() {
   const { updateMutation, deleteMutation } = useTodoMutation();
 
   const onClickIsDoneHandler = (todo:TodoType) => () => updateMutation.mutate(todo);
-  const onClickDeleteHandler = (id:Pick<TodoType,'id'>) => () => deleteMutation.mutate(id);
+  const onClickDeleteHandler = (id:number) => () => deleteMutation.mutate(id);
   
   return {
     onClickDeleteHandler,
